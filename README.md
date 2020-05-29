@@ -1,5 +1,5 @@
 # MyShop
-Flutter Mobile Apps My Shop, use State Management
+Flutter Mobile Apps My Shop, use State Management, Firebase
 
 ## Screenshoot
 
