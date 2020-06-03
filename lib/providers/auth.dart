@@ -14,15 +14,17 @@ class Auth with ChangeNotifier {
   }
 
   String get token {
-    // if (_expiryDate != null &&
-    //     _expiryDate.isAfter(DateTime.now()) &&
-    //     _token != null) {
-    //   return _token;
-    // }
-    if (_token != null) {
+    if (_expiryDate != null &&
+        _expiryDate.isAfter(DateTime.now()) &&
+        _token != null) {
       return _token;
     }
+
     return null;
+  }
+
+  String get userId {
+    return _userId;
   }
 
   Future<void> _authenticate(
@@ -42,7 +44,7 @@ class Auth with ChangeNotifier {
       );
 
       final responseData = json.decode(response.body);
-      print(responseData);
+      // print(responseData);
       if (responseData['error'] != null) {
         throw HttpException(responseData['error']['message']);
       }
